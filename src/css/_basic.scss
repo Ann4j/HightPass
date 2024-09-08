@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    min-width: 320px;
+    background-color: #fff;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    transition: all 0.3s ease-out;
+  }
+
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline-color: transparent;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+
+  input {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    src: local("Roboto-Regular"),
+      url("../fonts/RobotoRegular.woff2") format("woff2"),
+      url("../fonts/RobotoRegular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    src: local("Roboto-Bold"),
+      url("../fonts/RobotoBold.woff2") format("woff2"),
+      url("../fonts/RobotoBold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/TTFirsNeue-Regular.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/TTFirsNeue-Bold.woff2') format('woff2');
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+  }

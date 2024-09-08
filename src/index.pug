@@ -1,0 +1,143 @@
+doctype html
+
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Hight pass
+    link(rel="icon" href="/img/favicon.svg" type="image/svg+xml")
+    link(rel="stylesheet" href="/css/normalize.css")
+    link(rel="stylesheet" href="/css/style.scss")
+  body
+  - var events = [{class:"event-one",hashtag:"#fuji", date:"9 апреля", title:"Cемантический разбор", descr:"В рамках спецификации современных стандартов, интерактивные прототипы"},{class:"event-two",hashtag:"#проектзабвение", date:"20 марта", title:"Забвение", descr:"Играет важную роль в формировании глубокомысленных рассуждений"}]
+  - var nav = [{name:"О студии"},{name:"Наши проекты"},{name:"Услуги"}, {name:"Мастер классы"},{name:"Контакты"} ]
+    header.header
+      .container
+        .header__content
+          a(href="").header__logo
+            include img/Logo.svg
+          nav.header__nav.nav
+            ul.nav__list
+              each item in nav
+                li.nav__item
+                  a(href="#").nav__link=item.name
+          button.header__btn
+            include img/search.svg
+    nav.header__nav.nav.nav-mobile
+      .container
+        ul.nav__list
+          each item in nav
+            li.nav__item
+              a(href="#").nav__link=item.name
+        include img/header__burger.svg
+    main.main
+      section.hero
+        .container
+          .hero__content
+            .hero__neon.neon
+              p.neon__hashtag #мастеркласс
+              p.neon__master Мастер-класс от&nbsp;Игоря Робова
+              h2.neon__title Неоновый фотосет 2.0 7&nbsp;июля 20:00
+              button.neon__btn Узнать больше
+            .hero__foto.hero__foto-top
+              h3.hero__title Работы участников предыдущего мастер-класса
+              picture
+                source(srcset=`img/hero__foto-2-320px.jpg` media="(max-width: 765px)")
+                source(srcset=`img/hero__foto-2-768px.jpg` media="(max-width: 1024px)")
+                source(srcset=`img/hero__foto-2-1340px.jpg` media="(max-width: 1340px)")
+                img(src="img/hero__foto-2.jpg" alt="")
+            .hero__foto.hero__foto-bottom
+              picture
+                source(srcset=`img/hero__foto-3-320px.jpg` media="(max-width: 765px)")
+                source(srcset=`img/hero__foto-3-768px.jpg` media="(max-width: 1024px)")
+                source(srcset=`img/hero__foto-3-1340px.jpg` media="(max-width: 1340px)")
+                img(src="img/hero__foto-3.jpg" alt="")
+            .hero__foto.hero__foto-bottom
+              picture
+                source(srcset=`img/hero__foto-4-320px.jpg` media="(max-width: 765px)")
+                source(srcset=`img/hero__foto-4-768px.jpg` media="(max-width: 1024px)")
+                source(srcset=`img/hero__foto-4-1340px.jpg` media="(max-width: 1340px)")
+                img(src="img/hero__foto-4.jpg" alt="")
+      section.about
+        .container
+          .about__content
+            .about__info.info
+              h3.info__title О студии
+              p.info__descr В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от&nbsp;нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.
+            .about__subscribe.subscribe
+              .subscribe__wrap
+                h4.subscribe__title Подписаться на рассылку
+                form.subscribe__shape.shape
+                  input(type="text" placeholder="Email").shape__input
+                  button.shape__btn Отправить
+      section.projects
+        .container
+          .projects__content
+            h3.projects__title  Наши проекты
+            .projects__case
+              each project in projects
+                div(class=`projects__card ${project.class}`)
+                  article(class=`projects__services services`)
+                    picture
+                      source(srcset=`img/project-${project.photo}-320px.jpg` media="(max-width: 765px)")
+                      source(srcset=`img/project-${project.photo}-768px.jpg` media="(max-width: 1024px)")
+                      source(srcset=`img/project-${project.photo}-1300px.jpg` media="(max-width: 1340px)")
+                      img( class='projects__img' src=`img/project-${project.photo}.jpg`)
+                    p.services__hashtag=project.hashtag
+                    .services__case
+                      p.services__descr=project.descr
+                      span.services__date=project.date
+              each event in events
+                article(class=`projects__event event ${event.class}`)
+                  p.event__hashtag=event.hashtag
+                  .event__case
+                    span.event__date=event.date
+                    h4.event__title=event.title
+                    p.event__descr=event.descr
+                    button.event__btn О проекте
+      section.contacts
+        .container
+          .contacts__content
+            h3.contacts__title Контакты
+            .contacts__case
+              .contacts__map.map
+                .map__wrap
+                  button.map__btn
+                    include img/cancel.svg
+                  .map__studio.studio
+                    h4.studio__name Студия «High pass»
+                    address.studio__address.address
+                      p.address__descr 107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+                        a(href="tel:+749542423532").address__phone +7 495 424-23-532
+              .contacts__bid.bid
+                h4.bid__title Оставить заявку
+                p.bid__descr Оставьте ваши данные, указав в графе «Комментарий» желаемые время и дату съёмки или другого мероприятия
+                form.bid__form.form
+                  input.form__input(type="text" placeholder="Имя")
+                  input.form__input(type="text" placeholder="Email")
+                  textarea.form__textarea( required  placeholder="Комментари")
+                  button.form__btn Отправить
+    footer.footer
+      .container
+        .footer__content
+          .footer__wrap
+            include img/Logo.svg
+            p.footer__copyright Фотостудия High pass® 2018–2020
+          p.footer__descr Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра. © Имоджен Каннингем
+          .footer__media.media
+            p.media__text Больше интересного:
+            .media__icon
+              a.media__link
+                include img/class.svg
+              a.media__link
+                include img/vk.svg
+
+    .footer__wrap.footer__wrap-mobile
+      include img/Logo.svg
+      p.footer__copyright Фотостудия High pass® 2018–2020
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+@mixin styleTitle {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: $font-second;
+}
+
+@mixin btn {
+  background: $color-btn;
+  padding: 15px 22px;
+  color: $color-text;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+@mixin styleText {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@mixin hashtag {
+  position: absolute;
+  font-size: 14px;
+  background-color: #202020;
+  color: #fff;
+  padding: 6px 14px;
+}
